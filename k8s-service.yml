@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-k8s-skaffold-demo
+  labels:
+    name: spring-boot-k8s-skaffold-demo
+spec:
+  ports:
+    - nodePort: 30143
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  type: NodePort
+  selector:
+    app: spring-boot-k8s-skaffold-demo
