@@ -5,12 +5,10 @@ metadata:
 build:
   artifacts:
     - image: spring-boot-k8s-skaffold-demo
-      jib: { }
+      jib:
+        project: id.my.hendisantika:k8s-skaffold-demo
 manifests:
   rawYaml:
     - k8s-deployment.yml
     - k8s-service.yml
-deploy:
-  kubectl:
-    manifests:
-      - k8s-*
+    - skaffold.yaml
